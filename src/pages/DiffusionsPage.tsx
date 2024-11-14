@@ -115,7 +115,7 @@ export function DiffusionsPage() {
           {filteredDiffusions.map((post, index) => (
             <Link
               key={index}
-              to={`/diffusion/${post.slug}`}
+              to={`/diffusions/${post.slug}`}
               className="group bg-white rounded-3xl overflow-hidden border-2 border-black/5 hover:border-highlight transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
