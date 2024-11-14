@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Trophy, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const cases = [
   {
@@ -84,10 +85,10 @@ export function CaseStudies() {
                   ))}
                 </div>
 
-                <button className="flex items-center gap-2 text-white group-hover:text-highlight transition-colors">
+                <Link to={`/success-stories`} className="flex items-center gap-2 text-white group-hover:text-highlight transition-colors">
                   Read Success Story
                   <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
-                </button>
+                </Link>
               </div>
             </div>
           );
@@ -95,9 +96,9 @@ export function CaseStudies() {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="px-8 py-4 bg-highlight text-black rounded-full font-bold hover:bg-white transition-all duration-500 hover:scale-105 hover:shadow-lg">
+        <Link to={`/success-stories`} className="px-8 py-4 bg-highlight text-black rounded-full font-bold hover:bg-white transition-all duration-500 hover:scale-105 hover:shadow-lg">
           View All Success Stories
-        </button>
+        </Link>
       </div>
     </section>
   );
