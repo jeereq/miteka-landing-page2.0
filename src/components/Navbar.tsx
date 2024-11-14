@@ -57,11 +57,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        !isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${!isScrolled
           ? 'bg-white/90 backdrop-blur-md shadow-lg py-2'
           : 'bg-transparent py-4'
-      }`}
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -84,11 +83,9 @@ export function Navbar() {
                 key={item.name}
                 to={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className={`relative text-sm font-medium transition-colors hover:text-highlight ${
-                  isActive(item.href) ? 'text-highlight' : 'text-gray-900'
-                } after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-highlight after:transform after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                  isActive(item.href) ? 'after:scale-x-100' : ''
-                }`}
+                className={`relative text-sm font-medium transition-colors hover:text-highlight ${isActive(item.href) ? !isScrolled ? 'text-highlight' : '' : 'text-gray-900'
+                  } after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-highlight after:transform after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${isActive(item.href) ? 'after:scale-x-100' : ''
+                  }`}
               >
                 {t(item.name)}
               </Link>
@@ -114,9 +111,8 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden fixed inset-0 top-[64px] bg-white transform transition-transform duration-300 ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+          className={`lg:hidden fixed inset-0 top-[64px] bg-white transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
         >
           <div className="h-full overflow-auto py-6 px-4">
             <div className="flex flex-col gap-4">
@@ -125,11 +121,10 @@ export function Navbar() {
                   key={item.name}
                   to={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className={`p-4 rounded-xl text-center font-medium transition-all ${
-                    isActive(item.href)
+                  className={`p-4 rounded-xl text-center font-medium transition-all ${isActive(item.href)
                       ? 'bg-highlight text-white'
                       : 'hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   {t(item.name)}
                 </Link>
